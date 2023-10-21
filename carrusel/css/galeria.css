@@ -1,0 +1,148 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #b2f3f7;
+  color: #000000;
+}
+
+#contenedor {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:    "header header header"
+                            "nav nav nav"
+                            "contenido contenido contenido"
+                            "footer footer footer";
+}
+
+.bordes {
+  background-color: #9800be;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+nav {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  grid-area: nav;
+  font-family: Verdana;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+  background: #2ab1eb;
+}
+
+
+
+a {
+  padding: 20px;
+  background: #9800be;
+  text-decoration: none;
+  color: #fff;
+}
+
+#contenido{
+  grid-area: contenido;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  margin-left: 10%;
+}
+
+.carousel {
+  display: flex;
+  margin-left: 100px;
+  width: 600px;
+  height: 300px;
+  position: relative;
+}
+
+.carousel>ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide>img {
+  display: block;
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 30px;
+  top: 60%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  border-radius: .25rem;
+  padding: 0 .5rem;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+footer{
+  background: #03b5c9;
+  color: #fff;
+  grid-area: footer;
+  margin-top: 10%;
+}
+footer h1{
+  float: right;
+  margin-top: 25px;
+  margin-right: 50px;
+}

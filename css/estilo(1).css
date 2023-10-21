@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #b2f3f7;
+    color: #000000;
+}
+
+ 
+
+#contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:    "header header header"
+                            "nav nav nav"
+                            "contenido contenido sidebar"
+                            "widget-1 widget-2 sidebar"
+                            "footer footer footer";
+}
+
+ 
+
+.bordes{
+    background-color: #9800be;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+
+#header{
+    grid-area: header;
+}
+
+ 
+
+nav{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    grid-area: nav;
+    font-family: Verdana;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background: #2ab1eb;
+}
+
+ 
+
+a{
+    padding: 20px;
+    background: #9800be;
+    text-decoration: none;
+    color: #fff;
+}
+
+ 
+
+#contenido{
+    grid-area: contenido;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+}
+
+#sidebar{
+    grid-column: 3 / 4;
+    background-color: #9800be;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: sidebar;
+    width: 600px;
+}
+
+.wid{
+    
+    color: white;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ 
+
+footer{
+    background: #03b5c9;
+    color: #fff;
+    grid-area: footer;
+}
+footer h1{
+    float: right;
+    margin-top: 25px;
+    margin-right: 50px;
+}
+
+@media screen and (max-width: 768px){
+    body{
+      width: 100%;
+    }
+    #contenido{
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "contenido contenido contenido"
+        "aside aside aside"
+        "widget-1 widget-2 sidebar"
+        "footer footer footer";
+    }
+
+    header{
+        width:75%;
+    }
+
+    nav{
+        margin-left: -65px;
+        font-size: 6px;
+    }
+
+    #sidebar{
+        margin-top: 140px;
+        margin-left: -340px;
+        display: flex;
+        width: 280px;
+        background: none;
+    }
+    
+    #widget-1{
+    margin-top: 180px;
+    }
+    
+    
+    #widget-2{
+        margin-top: 180px;
+    }
+
+    footer{
+        width: 70%;
+        background: #03b5c9;
+        color: #fff;
+        grid-area: footer;
+    }
+    footer h1{
+        float: right;
+
+    }
+    nav {
+        float: left;
+    }
+}
