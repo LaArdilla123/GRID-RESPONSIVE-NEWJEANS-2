@@ -1,0 +1,6 @@
+Profesor, buenas tarde
+Tengo un problema en 000WEBHOST:
+el css para hacerlo responsive, ya le intente de todo pero los datos no se actualiza.
+
+iniciarsesion.php tambien me marca un error en linea 27 y el resultado lo lanza falso, no se establece la conexion
+a pesar que en XAMPP durante la clase el archivo funcionaba bien.
